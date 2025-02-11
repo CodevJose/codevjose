@@ -5,14 +5,11 @@ function cargarComentarios() {
             var comentariosDiv = document.getElementById("comentarios");
             comentariosDiv.innerHTML = '';
             comentarios.forEach(comentario => {
-                comentariosDiv.innerHTML += "<p><strong>" + comentario.nombre + ":</strong> " + comentario.texto + "</p>";
+                comentariosDiv.innerHTML += `<p><strong>${comentario.nombre}:</strong> ${comentario.texto}</p>`;
             });
         });
 }
-function borrarComentarios() {
-            localStorage.removeItem('comentarios');
-            cargarComentarios();
-        }
+
 function enviarComentario() {
     var nombre = document.getElementById("nombre").value;
     var texto = document.getElementById("comentario").value;
@@ -27,7 +24,11 @@ function enviarComentario() {
     }).then(response => {
         if (response.ok) {
             cargarComentarios();
+        } else {
+            console.error('Error al guardar el comentario');
         }
+    }).catch(error => {
+        console.error('Error al enviar el comentario:', error);
     });
 }
 
