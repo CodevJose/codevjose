@@ -1,5 +1,5 @@
 function cargarComentarios() {
-    fetch('comentarios.json')
+    fetch('https://tu-app-de-heroku.herokuapp.com/comentarios.json')
         .then(response => response.json())
         .then(comentarios => {
             var comentariosDiv = document.getElementById("comentarios");
@@ -15,7 +15,7 @@ function enviarComentario() {
     var texto = document.getElementById("comentario").value;
     var nuevoComentario = { nombre: nombre, texto: texto };
 
-    fetch('comentarios', {
+    fetch('https://github.com/CodevJose/codevjose/edit/main/comentarios.json', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
