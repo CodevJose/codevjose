@@ -9,7 +9,10 @@ function cargarComentarios() {
             });
         });
 }
-
+function borrarComentarios() {
+            localStorage.removeItem('comentarios');
+            cargarComentarios();
+        }
 function enviarComentario() {
     var nombre = document.getElementById("nombre").value;
     var texto = document.getElementById("comentario").value;
