@@ -9,7 +9,7 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.post('/comentarios', (req, res) => {
+app.post('comentarios', (req, res) => {
     const nuevoComentario = req.body;
     fs.readFile('comentarios.json', 'utf8', (err, data) => {
         if (err && err.code === 'ENOENT') {
@@ -38,6 +38,3 @@ app.post('/comentarios', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
-});
