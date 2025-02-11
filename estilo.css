@@ -57,9 +57,13 @@ p, ul {
 strong {
     color: #007BFF;
 }
-
+.comentarios{
+width:50%;
+margin: auto;
+pading:10px;
+}
 input[type="text"], textarea {
-    width: 100%;
+    width: 40%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
