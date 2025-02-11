@@ -1,4 +1,3 @@
-
 function cargarComentarios() {
     var comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
     var comentariosDiv = document.getElementById("comentarios");
@@ -18,12 +17,7 @@ function enviarComentario() {
     localStorage.setItem('comentarios', JSON.stringify(comentarios));
     cargarComentarios();
 }
-/*
-function borrarComentarios() {
-    localStorage.removeItem('comentarios');
-    cargarComentarios();
-}
-*/
+
 window.onload = function() {
     cargarComentarios();
 };
