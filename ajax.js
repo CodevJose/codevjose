@@ -15,7 +15,7 @@ function enviarComentario() {
     var texto = document.getElementById("comentario").value;
     var nuevoComentario = { nombre: nombre, texto: texto };
 
-    fetch('https://codevjose.github.io/codevjose/comentarios', {
+    fetch('https://codevjose.github.io/codevjose/comentarios.html', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
