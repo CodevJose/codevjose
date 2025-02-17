@@ -1,0 +1,21 @@
+comments:
+  allowedFields:
+    - name
+    - email
+    - message
+  branch: "main"
+  commitMessage: "New comment in [POST NAME]"
+  filename: "staticman-comments-[TIMESTAMP].json"
+  format: "json"
+  moderation: true
+  path: "_data/comments"
+  requiredFields:
+    - name
+    - message
+  transforms:
+    email: md5
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "iso8601"
